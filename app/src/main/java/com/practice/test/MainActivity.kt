@@ -14,9 +14,11 @@ class MainActivity : AppCompatActivity() {
         ok.setOnClickListener {
 
             val inputName = nameEdt.text.toString()
+            val inputBirthYear = birthYearEdt.text.toString()
 
             val myIntent = Intent(this, MyPageActivity::class.java)
             myIntent.putExtra("userName", inputName)
+            myIntent.putExtra("userAge", 2020-inputBirthYear+1)
             startActivity(myIntent)
 
 
