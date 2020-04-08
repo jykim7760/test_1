@@ -7,18 +7,23 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    val REQ_FOR_ADDRESS = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         ok.setOnClickListener {
 
+            val myIntent = Intent(this, EditAddressActivity::class.java)
+            startActivityForResult(myIntent, REQ_FOR_ADDRESS)
+
             val inputName = nameEdt.text.toString()
             val inputBirthYear = birthYearEdt.text.toString()
 
             val myIntent = Intent(this, MyPageActivity::class.java)
             myIntent.putExtra("userName", inputName)
-            myIntent.putExtra("userAge", 2020-inputBirthYear+1)
+            myIntent.putExtra("userAge", "2020-inputBirthYear+1)
             startActivity(myIntent)
 
 
